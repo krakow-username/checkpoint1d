@@ -1,26 +1,37 @@
-int size = 600;
+int size = 1200;
 float r = 0;
+int o =1;
 void art2(){
   rectMode(CENTER);
-  size = 600;
+  size = 1200;
   background(255,255,255);
-  r = r+0.1;
+  pushMatrix();
+  translate(width/2,height/2);
   pushMatrix();
   while(size >10){
-    rotate(r);
-    SQUARE(width/2,height/2,size);
+    if (o==1){
+      fill(255,255,255);} else{
+        fill(0,0,0);
+      }
+    rotate(0.1*sin(r));
+    SQUARE(width/2,height/2,size,r);
     size = size - 20;
+    o = o*-1;
   }
   popMatrix();
-  
+  r = r+0.01;
+  popMatrix();
   button(width -100, height -100);
 }
 
-void SQUARE(int x, int y, int size){
-  translate(x,y);
+void SQUARE(int x, int y, int size, float rotate){
+  
   pushMatrix();
-  rectMode(CENTER);
-  square(0,0,size);
+  
+  
+  
+  rectMode(CORNER);
+  square(-size/2,-size/2,size);
   
   popMatrix();
 }
