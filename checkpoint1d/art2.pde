@@ -1,7 +1,9 @@
 int size = 1200;
 float r = 0;
 int o =1;
+float random1;
 void art2(){
+  
   rectMode(CENTER);
   size = 1200;
   background(255,255,255);
@@ -9,6 +11,9 @@ void art2(){
   translate(width/2,height/2);
   pushMatrix();
   while(size >10){
+    if (random1 > 1.5){
+       colorMode(RGB);} else{
+         colorMode(HSB);}
     if (o==1){
       fill(255,255,255);} else{
         fill(0,0,0);
@@ -22,6 +27,7 @@ void art2(){
   r = r+0.01;
   popMatrix();
   button(width -100, height -100);
+  button2(100, height -100);
 }
 
 void SQUARE(int x, int y, int size, float rotate){

@@ -14,7 +14,7 @@ void art1(){
   if ( movement<-90){
   v = v*-1;
   }
-  c = map(movement,-90,90,50,150);
+  c = map(movement,-90,90,50,250);
   c2 = map(movement,-90,90,255,0);
   movement = movement + v;
   background(255,255,255);
@@ -32,6 +32,7 @@ void art1(){
   }
   popMatrix();
   button(width -100, height -100);
+  button2(100, height -100);
 }
 
 void art1Clicks(){
